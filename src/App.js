@@ -17,6 +17,8 @@ import ClickCounter2 from "./components/ClickCounter2";
 import HoverCounter2 from "./components/HoverCounter2";
 import User from "./components/User";
 import RenderPropsCounter from "./components/RenderPropsCounter";
+import ComponentC from "./components/ComponentC";
+import { UserProvider } from "./components/UserContext";
 
 const App = () => {
   return (
@@ -39,7 +41,7 @@ const App = () => {
       <HoverCounter2 />
       <User name={(isLoggedIn) => (isLoggedIn ? "vishwas" : "Guest")} /> */}
 
-      <RenderPropsCounter>
+      {/* <RenderPropsCounter>
         {(count, incrementCount) => (
           <ClickCounter2 count={count} incrementCount={incrementCount} />
         )}
@@ -48,8 +50,10 @@ const App = () => {
         render={(count, incrementCount) => (
           <HoverCounter2 count={count} incrementCount={incrementCount} />
         )}
-      />
-
+      /> */}
+      <UserProvider value={"manish"}>
+        <ComponentC />
+      </UserProvider>
       {/* <ErrorBoundary>
         <Hero heroName={"joker"} />
       </ErrorBoundary>

@@ -237,4 +237,11 @@ Take component as args and return new component
 Technique for sharing code between React Component
 using a props whose value is a function
 
-## 17.
+## 17. Context
+
+It provides a way to pass data through the component tree without having to pass props
+down manually at every level.
+
+1. Create The context
+2. Provide a context value
+3. Consume a context value
