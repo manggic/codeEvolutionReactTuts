@@ -18,7 +18,7 @@ import HoverCounter2 from "./components/HoverCounter2";
 import User from "./components/User";
 import RenderPropsCounter from "./components/RenderPropsCounter";
 import ComponentC from "./components/ComponentC";
-import { UserProvider } from "./components/UserContext";
+import { ChannelProvider, UserProvider } from "./components/UserContext";
 
 const App = () => {
   return (
@@ -52,7 +52,9 @@ const App = () => {
         )}
       /> */}
       <UserProvider value={"manish"}>
-        <ComponentC />
+        <ChannelProvider value="CodeEvolution">
+          <ComponentC />
+        </ChannelProvider>
       </UserProvider>
       {/* <ErrorBoundary>
         <Hero heroName={"joker"} />

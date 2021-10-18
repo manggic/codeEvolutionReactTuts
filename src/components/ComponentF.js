@@ -1,11 +1,21 @@
 import React from "react";
-import { UserConsumer } from "./UserContext";
+import { UserConsumer, ChannelConsumer } from "./UserContext";
 
 function ComponentF() {
   return (
     <UserConsumer>
       {(username) => {
-        return <div>Hello {username}</div>;
+        return (
+          <ChannelConsumer>
+            {(channel) => {
+              return (
+                <div>
+                  Hello {username} channel {channel}{" "}
+                </div>
+              );
+            }}
+          </ChannelConsumer>
+        );
       }}
     </UserConsumer>
   );
