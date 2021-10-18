@@ -6,7 +6,9 @@ React shortcut snippet
 
 ## 1. To create react App
 
+```
 npx create-react-app <app-name>
+```
 
 ## 2. Component Type
 
