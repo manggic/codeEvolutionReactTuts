@@ -311,6 +311,7 @@ use React feature without having to write a class
 
 ## 3. useState
 
+The useState hook lets you add state in functional Components
 This function accept an argu which is initial value of state property and return current value
 of state property and a method for updating the state property.
 
