@@ -23,6 +23,7 @@ import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
 import HookCounter from "./hookComponent/HookCounter";
 import HookCounterTwo from "./hookComponent/HookCounterTwo";
+import HookCounterThree from "./hookComponent/HookCounterThree";
 
 const App = () => {
   return (
@@ -73,7 +74,8 @@ const App = () => {
       {/* <PostForm /> */}
 
       {/* <HookCounter /> */}
-      <HookCounterTwo />
+      {/* <HookCounterTwo /> */}
+      <HookCounterThree />
     </div>
   );
 };
