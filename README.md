@@ -291,6 +291,39 @@ axios
    });
 ```
 
+## 19 .life cycle methods
+
+- componentDidMount
+
+```
+  componentDidMount() {
+    console.log("LifecycleA componentDidMount");
+  }
+```
+
+- componentDidUpdate
+
+```
+componentDidUpdate(prevProps, prevState, snapshot) {
+  if(prevState.count !== this.state.count){
+    console.log("LifecycleA componentDidUpdate");
+    document.title = `Inside componentDidUpdate`;
+  }
+  }
+```
+
+- componentWillUnmount
+
+```
+componentWillUnmount() {}
+```
+
+- componentDidCatch
+
+```
+ componentDidCatch() {}
+```
+
 # Hooks
 
 ## 1. What are Hooks?
@@ -323,4 +356,52 @@ const [count, setCount] = useState(0);
 
 ```
 setCount((prev) => prev + 1)}
+```
+
+## 4. useEffect
+
+The Effect Hook lets you perform side effects in functional components.
+It is close replacement for componentDidMount, componentDidUpdate, componentWillUnmount.
+
+useEffect is a function which accept function as argu.
+It's run after every render
+
+```
+useEffect(() => {
+    console.log("inside useEffect");
+  }, [count]);
+```
+
+The second argu array takes state and props, useEffect runs only when they changes
+
+<b> if [] is kept empty then no need to call useEffect on re-render and therefore called only once</b>
+
+<b>function that is passed to useEffect can return a function that is executed when component
+will unMount </b>
+
+```
+componentDidMount(){}
+       =
+useEffect(  ()=> {},[] )
+```
+
+```
+componentDidUpdate(prevProps, prevState){
+  if(  prevState.count !== this.state.count ){
+    // updation
+  }
+}
+       =
+useEffect( ()=> {}, [count]  )
+```
+
+```
+componentWillUnmount(){
+  clearInterval(this.timer)
+}
+       =
+useEffect( ()=> {  return ()=> {
+  clearInterval(timer)
+}  }, []  )
+
 ```

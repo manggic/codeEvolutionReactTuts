@@ -24,6 +24,9 @@ import PostForm from "./components/PostForm";
 import HookCounter from "./hookComponent/HookCounter";
 import HookCounterTwo from "./hookComponent/HookCounterTwo";
 import HookCounterThree from "./hookComponent/HookCounterThree";
+import HookMouse from "./hookComponent/HookMouse";
+import MouseContainer from "./hookComponent/MouseContainer";
+import IntervalHookCounter from "./hookComponent/IntervalHookCounter";
 
 const App = () => {
   return (
@@ -75,7 +78,11 @@ const App = () => {
 
       {/* <HookCounter /> */}
       {/* <HookCounterTwo /> */}
-      <HookCounterThree />
+      {/* <HookCounterThree /> */}
+
+      {/* <HookMouse /> */}
+      {/* <MouseContainer /> */}
+      <IntervalHookCounter />
     </div>
   );
 };
