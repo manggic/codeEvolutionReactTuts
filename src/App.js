@@ -19,6 +19,8 @@ import User from "./components/User";
 import RenderPropsCounter from "./components/RenderPropsCounter";
 import ComponentC from "./components/ComponentC";
 import { ChannelProvider, UserProvider } from "./components/UserContext";
+import PostList from "./components/PostList";
+import PostForm from "./components/PostForm";
 
 const App = () => {
   return (
@@ -51,11 +53,14 @@ const App = () => {
           <HoverCounter2 count={count} incrementCount={incrementCount} />
         )}
       /> */}
-      <UserProvider value={"manish"}>
+      {/* <UserProvider value={"manish"}>
         <ChannelProvider value="CodeEvolution">
           <ComponentC />
         </ChannelProvider>
-      </UserProvider>
+      </UserProvider> */}
+
+      {/* <PostList /> */}
+      <PostForm />
       {/* <ErrorBoundary>
         <Hero heroName={"joker"} />
       </ErrorBoundary>

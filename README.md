@@ -245,3 +245,48 @@ down manually at every level.
 1. Create The context
 2. Provide a context value
 3. Consume a context value
+
+## 18. HTTP
+
+- axios is used for this type of request to API
+- method used
+
+1. get
+
+```
+axios
+      .get(URL)
+      .then((res) => {
+        console.log("res", res);
+
+        this.setState((prev) => {
+          return {
+            ...prev,
+            posts: res.data,
+          };
+        });
+      })
+      .catch((err) => {
+        console.log("err", err);
+        this.setState((prev) => {
+          return {
+            ...prev,
+            errorMsg: "Error fetching the data",
+          };
+        });
+      });
+
+```
+
+2. post
+
+```
+   axios
+   .post(URL, this.state)
+   .then((res) => {
+   console.log("res", res);
+   })
+   .catch((err) => {
+   console.log("err", err);
+   });
+```
