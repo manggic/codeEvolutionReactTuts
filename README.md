@@ -290,3 +290,36 @@ axios
    console.log("err", err);
    });
 ```
+
+# Hooks
+
+## 1. What are Hooks?
+
+Hooks are a new feature addition in React version 16.8 which allow you to
+use React feature without having to write a class
+
+- State of a component
+- Hooks don't work inside class
+
+## 2. Rules of Hook
+
+- Only call Hooks at the top Level
+  Don't call hooks inside loop, conditions, or nested functions
+- Only call Hooks from the React functions
+  Call them from within React functional components and not just any
+  regular javascript function
+
+## 3. useState
+
+This function accept an argu which is initial value of state property and return current value
+of state property and a method for updating the state property.
+
+```
+const [count, setCount] = useState(0);
+```
+
+- when updating a state based on prev state use
+
+```
+setCount((prev) => prev + 1)}
+```

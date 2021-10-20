@@ -21,6 +21,8 @@ import ComponentC from "./components/ComponentC";
 import { ChannelProvider, UserProvider } from "./components/UserContext";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
+import HookCounter from "./hookComponent/HookCounter";
+import HookCounterTwo from "./hookComponent/HookCounterTwo";
 
 const App = () => {
   return (
@@ -58,9 +60,6 @@ const App = () => {
           <ComponentC />
         </ChannelProvider>
       </UserProvider> */}
-
-      {/* <PostList /> */}
-      <PostForm />
       {/* <ErrorBoundary>
         <Hero heroName={"joker"} />
       </ErrorBoundary>
@@ -70,6 +69,11 @@ const App = () => {
       <ErrorBoundary>
         <Hero heroName={"Army"} />
       </ErrorBoundary> */}
+      {/* <PostList /> */}
+      {/* <PostForm /> */}
+
+      {/* <HookCounter /> */}
+      <HookCounterTwo />
     </div>
   );
 };
