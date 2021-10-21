@@ -405,3 +405,38 @@ useEffect( ()=> {  return ()=> {
 }  }, []  )
 
 ```
+
+## 5. useContext
+
+step1 :
+
+```
+const UserContext =  React.createContext()
+```
+
+step2 :
+
+```
+<UserContext.Provider value={'hariom'}>
+   <Components />
+<UserContext.Provider>
+```
+
+step3 :
+
+```
+import { useContext} from 'react'
+
+import {UserContext} from '../App'
+
+
+const Component =()=> {
+     const user = useContext(UserContext)
+
+    return (
+      <div>
+      {user}
+      </div>
+    )
+}
+```

@@ -27,6 +27,7 @@ import HookCounterThree from "./hookComponent/HookCounterThree";
 import HookMouse from "./hookComponent/HookMouse";
 import MouseContainer from "./hookComponent/MouseContainer";
 import IntervalHookCounter from "./hookComponent/IntervalHookCounter";
+import DataFetching from "./hookComponent/DataFetching";
 
 const App = () => {
   return (
@@ -82,7 +83,9 @@ const App = () => {
 
       {/* <HookMouse /> */}
       {/* <MouseContainer /> */}
-      <IntervalHookCounter />
+      {/* <IntervalHookCounter /> */}
+
+      <DataFetching />
     </div>
   );
 };
