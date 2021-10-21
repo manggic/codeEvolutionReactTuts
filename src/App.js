@@ -29,6 +29,7 @@ import MouseContainer from "./hookComponent/MouseContainer";
 import IntervalHookCounter from "./hookComponent/IntervalHookCounter";
 import DataFetching from "./hookComponent/DataFetching";
 import UseReducerCounter1 from "./hookComponent/UseReducerCounter1";
+import UseReducerCounter2 from "./hookComponent/UseReducerCounter2";
 const App = () => {
   return (
     <div className="App">
@@ -87,7 +88,8 @@ const App = () => {
 
       {/* <DataFetching /> */}
 
-      <UseReducerCounter1 />
+      {/* <UseReducerCounter1 /> */}
+      <UseReducerCounter2 />
     </div>
   );
 };
