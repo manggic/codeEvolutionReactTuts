@@ -291,7 +291,7 @@ axios
    });
 ```
 
-## 19 .life cycle methods
+## 19. life cycle methods
 
 - componentDidMount
 
@@ -443,11 +443,11 @@ const Component =()=> {
 
 ## 6. useReducer
 
-useReducer is a hook for state management
-It is an alternative to useState
-useReducer is related to reducer functions
-useReducer(reducer , initialState)
-reducer(currentState, action)
+- useReducer is a hook for state management
+- It is an alternative to useState
+- useReducer is related to reducer functions
+- useReducer(reducer , initialState)
+- reducer(currentState, action)
 
 ```
 import React, { useReducer } from "react";
