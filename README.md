@@ -440,3 +440,40 @@ const Component =()=> {
     )
 }
 ```
+
+## 6. useReducer
+
+useReducer is a hook for state management
+It is an alternative to useState
+useReducer is related to reducer functions
+useReducer(reducer , initialState)
+reducer(currentState, action)
+
+```
+import React, { useReducer } from "react";
+
+
+const initialState = 0;
+
+const reducer = (currentState, action) => {
+  switch (action) {
+    case "increment":
+      return currentState + 1;
+    case "decrement":
+      return currentState - 1;
+    case "reset":
+      return initialState;
+    default:
+      return currentState;
+  }
+};
+
+const Counter = ()=> {
+
+  const [count, dispatch] = useReducer(reducer, initialState);
+  return <div>
+   <button onClick={() => dispatch("increment")}>increment</button>
+  </div>
+}
+
+```
