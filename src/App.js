@@ -30,10 +30,36 @@ import IntervalHookCounter from "./hookComponent/IntervalHookCounter";
 import DataFetching from "./hookComponent/DataFetching";
 import UseReducerCounter1 from "./hookComponent/UseReducerCounter1";
 import UseReducerCounter2 from "./hookComponent/UseReducerCounter2";
+import UseReducerCounter3 from "./hookComponent/UseReducerCounter3";
+import ComponentA from "./components/ComponentA";
+import ComponentB from "./components/ComponentB";
+import React, { useReducer } from "react";
+
+export const CountContext = React.createContext();
+
+const initialState = 0;
+
+const reducer = (currentState, action) => {
+  switch (action) {
+    case "increment":
+      return currentState + 1;
+
+    case "decrement":
+      return currentState - 1;
+    case "reset":
+      return initialState;
+
+    default:
+      return currentState;
+  }
+};
+
 const App = () => {
+  const [count, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div className="App">
-      {/* <Greek name={"manish Mahto"} age="23" />
+      {/* <Greek name={"manish Mahto"} age="23"/>
       <Greek name={"umesh Jain"} />
       <Greek name={"sameer Shinde"} /> */}
       {/* <Counter /> */}
@@ -89,7 +115,17 @@ const App = () => {
       {/* <DataFetching /> */}
 
       {/* <UseReducerCounter1 /> */}
-      <UseReducerCounter2 />
+      {/* <UseReducerCounter2 /> */}
+      {/* <UseReducerCounter3 /> */}
+
+      <CountContext.Provider
+        value={{ countState: count, countDispatch: dispatch }}
+      >
+        count : {count}
+        <ComponentA />
+        <ComponentB />
+        <ComponentC />
+      </CountContext.Provider>
     </div>
   );
 };
