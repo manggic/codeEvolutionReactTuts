@@ -36,6 +36,7 @@ import ComponentB from "./components/ComponentB";
 import React, { useReducer } from "react";
 import DataFetching2 from "./hookComponent/DataFetching2";
 import Parent from "./hookComponent/Parent";
+import UseMemoCounter from "./hookComponent/UseMemoCounter";
 
 export const CountContext = React.createContext();
 
@@ -129,7 +130,9 @@ const App = () => {
         <ComponentC />
       </CountContext.Provider> */}
 
-      <Parent />
+      {/* <Parent /> */}
+
+      <UseMemoCounter />
     </div>
   );
 };

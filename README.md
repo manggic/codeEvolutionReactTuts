@@ -495,9 +495,28 @@ const Counter = ()=> {
 - It is useful when passing callbacks to optimized child component that rely on ref equality
   to prevent un-neccessary render.
 
+```
+const incrementAge = useCallback(() => {
+    setAge((prev) => prev + 1);
+  }, [age]);
+```
+
 - React.memo()
   It is an HOC that prevent a FC from being re-render if it's props state do not changed.
 
 ```
 export default React.memo(Button);
+```
+
+# 9. useMemo
+
+useCallback caches the provided function instance itself
+useMemo invokes the provided function and caches it results
+
+```
+const isEven = useMemo(() => {
+    let i = 0;
+    while (i < 200000000) i++;
+    return counterOne % 2 === 0;
+  }, [counterOne]);
 ```
