@@ -37,6 +37,8 @@ import React, { useReducer } from "react";
 import DataFetching2 from "./hookComponent/DataFetching2";
 import Parent from "./hookComponent/Parent";
 import UseMemoCounter from "./hookComponent/UseMemoCounter";
+import FocusInput from "./hookComponent/FocusInput";
+import HookTimer from "./hookComponent/HookTimer";
 
 export const CountContext = React.createContext();
 
@@ -132,7 +134,9 @@ const App = () => {
 
       {/* <Parent /> */}
 
-      <UseMemoCounter />
+      {/* <UseMemoCounter /> */}
+      {/* <FocusInput /> */}
+      <HookTimer />
     </div>
   );
 };

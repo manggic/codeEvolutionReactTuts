@@ -520,3 +520,9 @@ const isEven = useMemo(() => {
     return counterOne % 2 === 0;
   }, [counterOne]);
 ```
+
+# 10. useRef
+
+- It is used to store any mutable value
+- Value will persist through the re-renders while also not causing any additional renders
+  when its value changes
