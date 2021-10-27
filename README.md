@@ -478,7 +478,7 @@ const Counter = ()=> {
 
 ```
 
-# 7. useState vs useReducer
+## 7. useState vs useReducer
 
 | Scenario               | useState               | useReducer             |
 | ---------------------- | ---------------------- | ---------------------- |
@@ -487,7 +487,7 @@ const Counter = ()=> {
 | business logic         | No business logic      | Complex business logic |
 | local/global           | local                  | global                 |
 
-# 8. useCallback
+## 8. useCallback
 
 - useCallback is a hook that will return a memoized version of callback func that only
   changes if one of the dependencies has changed.
@@ -508,7 +508,7 @@ const incrementAge = useCallback(() => {
 export default React.memo(Button);
 ```
 
-# 9. useMemo
+## 9. useMemo
 
 useCallback caches the provided function instance itself
 useMemo invokes the provided function and caches it results
@@ -521,7 +521,7 @@ const isEven = useMemo(() => {
   }, [counterOne]);
 ```
 
-# 10. useRef
+## 10. useRef
 
 - It is used to store any mutable value
 - Value will persist through the re-renders while also not causing any additional renders
