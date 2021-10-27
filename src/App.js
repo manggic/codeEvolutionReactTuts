@@ -35,6 +35,7 @@ import ComponentA from "./components/ComponentA";
 import ComponentB from "./components/ComponentB";
 import React, { useReducer } from "react";
 import DataFetching2 from "./hookComponent/DataFetching2";
+import Parent from "./hookComponent/Parent";
 
 export const CountContext = React.createContext();
 
@@ -114,7 +115,7 @@ const App = () => {
       {/* <IntervalHookCounter /> */}
 
       {/* <DataFetching /> */}
-      <DataFetching2 />
+      {/* <DataFetching2 /> */}
       {/* <UseReducerCounter1 /> */}
       {/* <UseReducerCounter2 /> */}
       {/* <UseReducerCounter3 /> */}
@@ -127,6 +128,8 @@ const App = () => {
         <ComponentB />
         <ComponentC />
       </CountContext.Provider> */}
+
+      <Parent />
     </div>
   );
 };

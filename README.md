@@ -477,3 +477,27 @@ const Counter = ()=> {
 }
 
 ```
+
+# 7. useState vs useReducer
+
+| Scenario               | useState               | useReducer             |
+| ---------------------- | ---------------------- | ---------------------- |
+| Type of State          | Number,String, Boolean | Object, Array          |
+| No of state transition | One or two             | Too Many               |
+| business logic         | No business logic      | Complex business logic |
+| local/global           | local                  | global                 |
+
+# 8. useCallback
+
+- useCallback is a hook that will return a memoized version of callback func that only
+  changes if one of the dependencies has changed.
+
+- It is useful when passing callbacks to optimized child component that rely on ref equality
+  to prevent un-neccessary render.
+
+- React.memo()
+  It is an HOC that prevent a FC from being re-render if it's props state do not changed.
+
+```
+export default React.memo(Button);
+```
