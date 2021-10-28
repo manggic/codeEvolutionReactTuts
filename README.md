@@ -569,3 +569,10 @@ const isEven = useMemo(() => {
 - Allow access to state via <b>getState()</b>
 - Allows state to be updated via <b>dispatch(action)</b>
 - Registers listener via subscribe(listener)
+
+### MIddleware
+
+- The Suggested way to extend redux with custom functionality
+- Provides a third-party extension point between dispatching an action, and the moment it
+  reaches the reducer.
+- use middleware for logging , crash reporting, performing asyn tasks, etc.
