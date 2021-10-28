@@ -526,3 +526,25 @@ const isEven = useMemo(() => {
 - It is used to store any mutable value
 - Value will persist through the re-renders while also not causing any additional renders
   when its value changes
+
+# Redux
+
+- Redux is a library for javaScript applications.
+- Redux is not tied to react, can be used with React,Angular and vue or even vanilla JavaScript.
+- Redux store the state of the application.
+
+| Cake Shop Scenario    | Redux   | Purpose                             |
+| --------------------- | ------- | ----------------------------------- |
+| Shop                  | Store   | Holds the state of your application |
+| Intention to BUY_CAKE | Action  | Describes what happened             |
+| ShopKeeper            | Reducer | Ties the store and actions together |
+
+- A store that holds the state of your applications.
+- An Action that describes the changes in the state of application.
+- A reducer which actually carries out the state transition depending on the action.
+
+### Three principle
+
+1. The state of your whole app is stored in an object tree within a single store.
+2. The only way to change the state is to emit an action, an object describing what happened (To update the state of your app, you need to let redux know about that with an action).
+3. To specify how the state tree is transformed by actions, you write pure reducers.

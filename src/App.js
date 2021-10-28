@@ -136,7 +136,7 @@ const App = () => {
 
       {/* <UseMemoCounter /> */}
       {/* <FocusInput /> */}
-      <HookTimer />
+      {/* <HookTimer /> */}
     </div>
   );
 };
