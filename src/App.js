@@ -39,7 +39,10 @@ import Parent from "./hookComponent/Parent";
 import UseMemoCounter from "./hookComponent/UseMemoCounter";
 import FocusInput from "./hookComponent/FocusInput";
 import HookTimer from "./hookComponent/HookTimer";
-
+import CakeContainer from "./reactRedux/CakeContainer";
+import { Provider } from "react-redux";
+import store from "./reactRedux/store";
+import HooksCakeConatainer from "./reactRedux/HooksCakeConatainer";
 export const CountContext = React.createContext();
 
 const initialState = 0;
@@ -137,6 +140,11 @@ const App = () => {
       {/* <UseMemoCounter /> */}
       {/* <FocusInput /> */}
       {/* <HookTimer /> */}
+
+      <Provider store={store}>
+        {/* <CakeContainer /> */}
+        <HooksCakeConatainer />
+      </Provider>
     </div>
   );
 };

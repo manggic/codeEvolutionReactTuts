@@ -527,6 +527,27 @@ const isEven = useMemo(() => {
 - Value will persist through the re-renders while also not causing any additional renders
   when its value changes
 
+## 11. useSelector
+
+- It is a hook provided by react-redux which acts closely equivalent to mapStateToProps function.
+- It takes in a function argument that returns the part of the state that you want-
+
+```
+ const numOfCakes = useSelector((state) => state.numOfCakes);
+```
+
+## 12. useDispatch
+
+- The equivalent of map dispatch to props is useDispatch
+- We will invoke useDispatch and store it to a variable, dispatch
+- we are able to dispatch any action to the store by simply adding an action as an argument
+
+```
+const dispatch = useDispatch();
+
+dispatch(buyCake())
+```
+
 # Redux
 
 - Redux is a library for javaScript applications.
