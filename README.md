@@ -597,3 +597,9 @@ dispatch(buyCake())
 - Provides a third-party extension point between dispatching an action, and the moment it
   reaches the reducer.
 - use middleware for logging , crash reporting, performing asyn tasks, etc.
+
+<b>when we use only mapDispatchToProps in our project </b>
+
+```
+ export default connect(null, mapDispatchToProps)(ItemContainer);
+```

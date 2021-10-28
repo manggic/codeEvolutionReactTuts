@@ -43,6 +43,9 @@ import CakeContainer from "./reactRedux/CakeContainer";
 import { Provider } from "react-redux";
 import store from "./reactRedux/store";
 import HooksCakeConatainer from "./reactRedux/HooksCakeConatainer";
+import IceCreamContainer from "./reactRedux/IceCreamContainer";
+import ItemContainer from "./reactRedux/ItemContainer";
+
 export const CountContext = React.createContext();
 
 const initialState = 0;
@@ -143,7 +146,10 @@ const App = () => {
 
       <Provider store={store}>
         {/* <CakeContainer /> */}
-        <HooksCakeConatainer />
+        {/* <HooksCakeConatainer /> */}
+        {/* <IceCreamContainer /> */}
+        <ItemContainer cake />
+        <ItemContainer />
       </Provider>
     </div>
   );
