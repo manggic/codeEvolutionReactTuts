@@ -570,7 +570,7 @@ const isEven = useMemo(() => {
 - Allows state to be updated via <b>dispatch(action)</b>
 - Registers listener via subscribe(listener)
 
-### MIddleware
+<b>MIddleware </b>
 
 - The Suggested way to extend redux with custom functionality
 - Provides a third-party extension point between dispatching an action, and the moment it
