@@ -548,3 +548,24 @@ const isEven = useMemo(() => {
 1. The state of your whole app is stored in an object tree within a single store.
 2. The only way to change the state is to emit an action, an object describing what happened (To update the state of your app, you need to let redux know about that with an action).
 3. To specify how the state tree is transformed by actions, you write pure reducers.
+
+<b>Actions </b>
+
+- The only way your app can interact with the store
+- Carry some info from your app to redux store
+- Plain JavaScript Objects
+- Have a type property that indicates the type of action being performed
+- The type property is typically defined as string constants
+
+<b>Reducers </b>
+
+- Specify how the app state changes in response to actions sent to the store
+- Function that accepts state and action as arguments, and return the next state of the app.
+- (prevState, action) => newState
+
+<b>Store </b>
+
+- One store for the entire app
+- Allow access to state via <b>getState()</b>
+- Allows state to be updated via <b>dispatch(action)</b>
+- Registers listener via subscribe(listener)
