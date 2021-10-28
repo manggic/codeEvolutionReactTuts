@@ -45,6 +45,7 @@ import store from "./reactRedux/store";
 import HooksCakeConatainer from "./reactRedux/HooksCakeConatainer";
 import IceCreamContainer from "./reactRedux/IceCreamContainer";
 import ItemContainer from "./reactRedux/ItemContainer";
+import UserContainer from "./reactRedux/UserContainer";
 
 export const CountContext = React.createContext();
 
@@ -148,8 +149,9 @@ const App = () => {
         {/* <CakeContainer /> */}
         {/* <HooksCakeConatainer /> */}
         {/* <IceCreamContainer /> */}
-        <ItemContainer cake />
-        <ItemContainer />
+        {/* <ItemContainer cake /> */}
+        {/* <ItemContainer /> */}
+        <UserContainer />
       </Provider>
     </div>
   );

@@ -1,7 +1,7 @@
 const redux = require("redux");
 const axios = require("axios");
 const thunkMiddleware = require("redux-thunk").default;
-const URL = "https://jsonplaceholder.typicode.com/usrs";
+const URL = "https://jsonplaceholder.typicode.com/users";
 const initialState = {
   loading: true,
   error: "",
