@@ -57,6 +57,7 @@ import Tippy from "@tippy.js/react";
 import "tippy.js/dist/tippy.css";
 import CountUp from "react-countup";
 import { ChromePicker } from "react-color";
+import ReactPlayer from "react-player";
 export const CountContext = React.createContext();
 
 const initialState = 0;
@@ -258,7 +259,7 @@ const App = () => {
       <br />
       <CountUp end={1000} start={500} prefix={"$"} decimal={2} duration={5} /> */}
 
-      <button onClick={() => setShowColorPicker((prev) => !prev)}>
+      {/* <button onClick={() => setShowColorPicker((prev) => !prev)}>
         {showColorPicker ? "hide color picker " : "show Color Picker"}
       </button>
 
@@ -269,7 +270,18 @@ const App = () => {
         />
       )}
 
-      <h2>You Picked : {color}</h2>
+      <h2>You Picked : {color}</h2> */}
+      <ReactPlayer
+        controls
+        width="480px"
+        height="240px"
+        url={"http://yes.com"}
+        onReady={() => console.log("onReady")}
+        onEnded={() => console.log("onEnded")}
+        onError={() => console.log("onError")}
+        onStart={() => console.log("onStart")}
+        onPause={() => console.log("onPause")}
+      />
     </div>
   );
 };
