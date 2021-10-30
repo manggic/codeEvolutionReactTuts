@@ -33,7 +33,7 @@ import UseReducerCounter2 from "./hookComponent/UseReducerCounter2";
 import UseReducerCounter3 from "./hookComponent/UseReducerCounter3";
 import ComponentA from "./components/ComponentA";
 import ComponentB from "./components/ComponentB";
-import React, { useReducer } from "react";
+import React, { useReducer, useState, forwardRef } from "react";
 import DataFetching2 from "./hookComponent/DataFetching2";
 import Parent from "./hookComponent/Parent";
 import UseMemoCounter from "./hookComponent/UseMemoCounter";
@@ -46,6 +46,14 @@ import HooksCakeConatainer from "./reactRedux/HooksCakeConatainer";
 import IceCreamContainer from "./reactRedux/IceCreamContainer";
 import ItemContainer from "./reactRedux/ItemContainer";
 import UserContainer from "./reactRedux/UserContainer";
+import { FaReact } from "react-icons/fa";
+import { MdAlarm } from "react-icons/md";
+import { IconContext } from "react-icons";
+import Modal from "react-modal";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Tippy from "@tippy.js/react";
+import "tippy.js/dist/tippy.css";
 
 export const CountContext = React.createContext();
 
@@ -66,8 +74,55 @@ const reducer = (currentState, action) => {
   }
 };
 
+const CustomToast = ({ closeToast }) => {
+  return (
+    <div>
+      Something went wrong !!
+      <button onClick={closeToast}>closed</button>
+    </div>
+  );
+};
+
+toast.configure();
+
+Modal.setAppElement("#root");
+
+const ColoredTooltip = () => {
+  return <span style={{ color: "blue" }}>Colored Component</span>;
+};
+
+const CustomChild = forwardRef((props, ref) => {
+  return (
+    <div ref={ref}>
+      <div>First Line</div>
+      <div>Second Line</div>
+    </div>
+  );
+});
+
 const App = () => {
   const [count, dispatch] = useReducer(reducer, initialState);
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const notify = () => {
+    toast("basic notification", { position: toast.POSITION.TOP_LEFT });
+    toast.success("Success notification", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 8000,
+    });
+    toast.info("Info notification", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: false,
+    });
+    toast.warn(CustomToast, {
+      position: toast.POSITION.BOTTOM_LEFT,
+    });
+    toast.error("Error notification", {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
+    toast("basic notification", { position: toast.POSITION.BOTTOM_RIGHT });
+  };
 
   return (
     <div className="App">
@@ -82,13 +137,11 @@ const App = () => {
       {/* <RefDemo /> */}
       {/* <FRParentInput /> */}
       {/* <PortalDemo /> */}
-
       {/* <ClickCounter name="vishwas" /> */}
       {/* <HoverCounter /> */}
       {/* <ClickCounter2 />
       <HoverCounter2 />
       <User name={(isLoggedIn) => (isLoggedIn ? "vishwas" : "Guest")} /> */}
-
       {/* <RenderPropsCounter>
         {(count, incrementCount) => (
           <ClickCounter2 count={count} incrementCount={incrementCount} />
@@ -115,21 +168,17 @@ const App = () => {
       </ErrorBoundary> */}
       {/* <PostList /> */}
       {/* <PostForm /> */}
-
       {/* <HookCounter /> */}
       {/* <HookCounterTwo /> */}
       {/* <HookCounterThree /> */}
-
       {/* <HookMouse /> */}
       {/* <MouseContainer /> */}
       {/* <IntervalHookCounter /> */}
-
       {/* <DataFetching /> */}
       {/* <DataFetching2 /> */}
       {/* <UseReducerCounter1 /> */}
       {/* <UseReducerCounter2 /> */}
       {/* <UseReducerCounter3 /> */}
-
       {/* <CountContext.Provider
         value={{ countState: count, countDispatch: dispatch }}
       >
@@ -138,21 +187,65 @@ const App = () => {
         <ComponentB />
         <ComponentC />
       </CountContext.Provider> */}
-
       {/* <Parent /> */}
-
       {/* <UseMemoCounter /> */}
       {/* <FocusInput /> */}
       {/* <HookTimer /> */}
-
       <Provider store={store}>
         {/* <CakeContainer /> */}
         {/* <HooksCakeConatainer /> */}
         {/* <IceCreamContainer /> */}
         {/* <ItemContainer cake /> */}
         {/* <ItemContainer /> */}
-        <UserContainer />
+        {/* <UserContainer /> */}
       </Provider>
+      <IconContext.Provider value={{ color: "blue", size: "5rem" }}>
+        {/* <FaReact />
+        <MdAlarm /> */}
+      </IconContext.Provider>
+      {/* react-toastify */}
+      {/* <button onClick={notify}>Notify!!</button> */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        style={{
+          overlay: { background: "grey" },
+          content: {
+            color: "orange",
+          },
+        }}
+      >
+        <h2>hello</h2>
+        <p>hi</p>
+        <button onClick={() => setModalIsOpen(false)}>close</button>
+      </Modal>
+      {/* <button onClick={() => setModalIsOpen(true)}>open Modal</button> */}
+      <div style={{ paddingBottom: "20px" }}>
+        <Tippy
+          arrow={false}
+          delay={1000}
+          placement={"right"}
+          content="Basic tooltip"
+        >
+          <button>Hover</button>
+        </Tippy>
+      </div>
+      <div style={{ paddingBottom: "20px" }}>
+        <Tippy content={<span style={{ color: "orange" }}>Colored</span>}>
+          <button>Hover</button>
+        </Tippy>
+      </div>
+      <div style={{ paddingBottom: "20px" }}>
+        <Tippy content={<ColoredTooltip />}>
+          <button>Hover</button>
+        </Tippy>
+      </div>
+      <div style={{ paddingBottom: "20px" }}>
+        <Tippy placement="top-start" content={<ColoredTooltip />}>
+          <CustomChild />
+          {/* <button>Hover</button> */}
+        </Tippy>
+      </div>
     </div>
   );
 };
