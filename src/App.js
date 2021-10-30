@@ -58,6 +58,7 @@ import "tippy.js/dist/tippy.css";
 import CountUp from "react-countup";
 import { ChromePicker } from "react-color";
 import ReactPlayer from "react-player";
+import LineChart from "./chartComponents.js/LineChart";
 export const CountContext = React.createContext();
 
 const initialState = 0;
@@ -271,7 +272,7 @@ const App = () => {
       )}
 
       <h2>You Picked : {color}</h2> */}
-      <ReactPlayer
+      {/* <ReactPlayer
         controls
         width="480px"
         height="240px"
@@ -281,7 +282,8 @@ const App = () => {
         onError={() => console.log("onError")}
         onStart={() => console.log("onStart")}
         onPause={() => console.log("onPause")}
-      />
+      /> */}
+      <LineChart />
     </div>
   );
 };
