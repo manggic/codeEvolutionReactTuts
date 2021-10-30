@@ -49,12 +49,14 @@ import UserContainer from "./reactRedux/UserContainer";
 import { FaReact } from "react-icons/fa";
 import { MdAlarm } from "react-icons/md";
 import { IconContext } from "react-icons";
+
 import Modal from "react-modal";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Tippy from "@tippy.js/react";
 import "tippy.js/dist/tippy.css";
-
+import CountUp from "react-countup";
+import { ChromePicker } from "react-color";
 export const CountContext = React.createContext();
 
 const initialState = 0;
@@ -104,6 +106,9 @@ const App = () => {
   const [count, dispatch] = useReducer(reducer, initialState);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const [color, setColor] = useState("#fff");
+  const [showColorPicker, setShowColorPicker] = useState(false);
 
   const notify = () => {
     toast("basic notification", { position: toast.POSITION.TOP_LEFT });
@@ -220,7 +225,7 @@ const App = () => {
         <button onClick={() => setModalIsOpen(false)}>close</button>
       </Modal>
       {/* <button onClick={() => setModalIsOpen(true)}>open Modal</button> */}
-      <div style={{ paddingBottom: "20px" }}>
+      {/* <div style={{ paddingBottom: "20px" }}>
         <Tippy
           arrow={false}
           delay={1000}
@@ -243,9 +248,28 @@ const App = () => {
       <div style={{ paddingBottom: "20px" }}>
         <Tippy placement="top-start" content={<ColoredTooltip />}>
           <CustomChild />
-          {/* <button>Hover</button> */}
+          <button>Hover</button>
         </Tippy>
-      </div>
+      </div> */}
+
+      {/* <CountUp end={200} />
+      <br />
+      <CountUp end={200} duration={5} />
+      <br />
+      <CountUp end={1000} start={500} prefix={"$"} decimal={2} duration={5} /> */}
+
+      <button onClick={() => setShowColorPicker((prev) => !prev)}>
+        {showColorPicker ? "hide color picker " : "show Color Picker"}
+      </button>
+
+      {showColorPicker && (
+        <ChromePicker
+          color={color}
+          onChange={(updatedColor) => setColor(updatedColor.hex)}
+        />
+      )}
+
+      <h2>You Picked : {color}</h2>
     </div>
   );
 };
